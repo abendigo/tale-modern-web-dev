@@ -61,6 +61,112 @@
 				</section>
 
 				<section>
+          <h2>Handlebars</h2>
+				</section>
+
+				<section>
+          <h2>Rule #1: don't mix markup and code</h2>
+          <p>TradeListView.js</p>
+          <pre>
+            <code>
+  $('.trades-list').append(
+    '<div class="trades-item">
+      <span class="trade-id">' + trade.id + '</span>
+      <span class="trade-pair">' + trade.get('pair') + '</span>
+      ...
+     </div>'
+  );
+            </code>
+          </pre>
+				</section>
+
+				<section>
+          <h2>Better but still fragile</h2>
+          <p>index.html</p>
+          <pre>
+            <code>
+  <script type="text/template" id="tmpl-trades-item">
+    <div class="trades-item">
+      <span class="trade-id"></span>
+      <span class="trade-pair"></span>
+    </div>
+  </script>
+            </code>
+          </pre>
+          <p>TradeListView.js</p>
+          <pre>
+            <code>
+  var trade_tmpl = $('#tmpl-trades-item');
+  trade_tmpl.find('.trade-id').text(trade.id);
+  trade_tmpl.find('.trade-pair').text(trade.get('pair'));
+
+  $('.trades-list').append(trade_tmpl.html());
+            </code>
+          </pre>
+				</section>
+
+				<section>
+          <h2>Handlebars template</h2>
+          <p>index.html</p>
+          <pre>
+            <code>
+  <script type="text/x-handlebars-template" id="tmpl-trades-item">
+    <div class="trades-item">
+      <span class="trade-id">{{id}}</span>
+      <span class="trade-pair">{{pair}}</span>
+    </div>
+  </script>
+            </code>
+          </pre>
+          <p>TradeListView.js</p>
+          <pre>
+            <code>
+  var template = Handlebars.compile($('#tmpl-trades-item').html());
+
+  var html = template({
+    id: trade.id,
+    pair: trade.get('pair')
+  });
+
+  $('.trades-list').append(html);
+            </code>
+          </pre>
+				</section>
+
+				<section>
+          <h2>Template precompilation</h2>
+          <p>trade-item.hbs</p>
+          <pre>
+            <code>
+  <div class="trades-item">
+    <span class="trade-id">{{id}}</span>
+    <span class="trade-pair">{{pair}}</span>
+  </div>
+            </code>
+          </pre>
+          <p>TradeListView.js</p>
+          <pre>
+            <code>
+  var html = Handlebars.template.trades-item({
+    id: trade.id,
+    pair: trade.get('pair')
+  });
+
+  $('.trades-list').append(html);
+            </code>
+          </pre>
+				</section>
+
+        <section>
+          <h2>Benefits</h2>
+          <ol>
+            <li class="fragment">maintainable (isolated, organized, logic-less)</li>
+            <li class="fragment">smaller templating library (runtime only)</li>
+            <li class="fragment">faster execution (compiled at build time)</li>
+          <ol>
+        </section>
+
+				<section>
 					<h1>THE END</h1>
 				</section>
 
