@@ -58,12 +58,12 @@
                 </section>
 
                 <section>
-					<h2>Client trading interfaces</h2>
-                    <ul>
-                        <li class="fragment">Where we were: Java</li>
-                        <li class="fragment">Where we're at: Java, iOS, Android</li>
-                        <li class="fragment">Where we want to be: HTML5, iOS, Android</li>
-                    </ul>
+					<h2>Trading interfaces</h2>
+                    <img class="logo multiple fragment" src="img/fxTrade_Java.png"/>
+                    <span class="fragment">
+                    <img class="logo multiple" width="200" src="img/fxTrade_iPhone.png"/>
+                    <img class="logo multiple" width="200" src="img/fxTrade_Android.png"/>
+                    </span>
 					<aside class="notes">
                         <p>Java from scratch vs Flash vs HTML5</p>
                     </aside>
@@ -72,11 +72,64 @@
 				<section>
 					<h2>About the team</h2>
                     <ul>
-                        <li class="fragment">2 senior full developers</li>
+                        <li class="fragment">2 senior fulltime developers</li>
                         <li class="fragment">2 junior co-op students (every 4 months)</li>
                     </ul>
 					<aside class="notes">
                     </aside>
+				</section>
+
+                <section>
+                    <h2>Our goals</h2>
+                    <ul>
+                        <li class="fragment">HTML5 & CSS3</li>
+                        <li class="fragment">Mobile first, Responsive design</li>
+                        <li class="fragment">No backend</li>
+                        <li class="fragment">Behaviour-Driven Development</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Mobile first, responsive design</h2>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Get a Device Lab</h2>
+                    <img src="img/devicelab_before.jpg"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Better yet, organize it</h2>
+                    <img src="img/devicelab_after.jpg"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Device remote debugging</h2>
+                    <p class="fragment">Natively with Safari, Google Chrome</p>
+                    <p class="fragment">3rd party library Weinre for IE, Firefox, Opera</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+ 				<section>
+ 				    <h2>No backend</h2>
+                    <p class="fragment">REST like API with CORS enabled</p>
+ 				</section>
+
+                <section>
+                    <h2>Behaviour-Driven Development</h2>
+                </section>
+
+				<section>
+                    <h2>Rule #1</h2>
+                    <img width="1024" height="550" src="img/onedoesnotjust_testsfirst.jpg"/>
+                    <p>courtesy of iome.me</p>
 				</section>
 
 				<section>
@@ -129,6 +182,32 @@
                     <img class="logo" src="img/bower_logo.png"/>
                 </section>
 
+                <section>
+                    <h2>Package management for the web</h2>
+                    <p class="fragment">Like 'apt-get install' for client-side Javascript libraries</p>
+                </section>
+
+                <section>
+                    <h2>Mocha, Chai & Sinon.JS</h2>
+                    <pre class="fragment">
+                        <code>
+define('Creating an account model with data from the API', function() {
+    var account;
+    before(function() {
+        // Act
+        account = new Backbone.Model({
+            accountName: 'Primary'
+        });
+    });
+    // Assert
+    it('Translates the accountName property', function() {
+        account.get('name').should.equal('Primary');
+    });
+});
+                        </code>
+                    </pre>
+                </section>
+
 				<section>
 					<h2>Backbone</h2>
                     <img class="logo" src="img/backbone_logo.png"/>
@@ -143,14 +222,23 @@
                     </aside>
 				</section>
 
-                <section>
-                    <h2>Behaviour-Driven Development</h2>
+ 				<section>
+ 				    <h2>Coffeescript</h2>
+                    <img class="logo" src="img/coffeescript_logo.png"/>
                 </section>
 
-				<section>
-                    <h2>Rule #1</h2>
-                    <img width="1024" height="550" src="img/onedoesnotjust_testsfirst.jpg"/>
-				</section>
+                <section>
+                    <h2>It's just Javascript</h2>
+                    <p class="fragment">Only the best parts</p>
+                    <p class="fragment">Safety of compiled language</p>
+ 				</section>
+
+                <section>
+                    <h2>Group coding session</h2>
+                        <p class="fragment">Get familiar with BDD...</p>
+                        <p class="fragment">... and Coffeescript</p>
+                        <p class="fragment">Layout core classes of Backbone application</p>
+                </section>
 
                 <section>
                     <h2>Gerrit, Github, Phabricator</h2>
@@ -181,21 +269,6 @@
                     <aside class="notes">
                     </aside>
                 </section>
-
- 				<section>
- 				    <h2>No backend</h2>
-                    <p class="fragment">REST like API with CORS enabled</p>
- 				</section>
-
- 				<section>
- 				    <h2>Coffeescript</h2>
-                    <img class="logo" src="img/coffeescript_logo.png"/>
-                </section>
-
-                <section>
-                    <p>Safety of compiled language</p>
-                    <p class="fragment">Opinionated Javascript (the best parts)</p>
- 				</section>
 
                 <section>
                     <h2>RequireJS</h2>
@@ -298,16 +371,19 @@
   $('.trades-list').append(html);
                         </code>
                     </pre>
+                    <aside class="notes">
+                    <ol>
+                        <li>maintainable (isolated, organized, logic-less)</li>
+                        <li>smaller templating library (runtime only)</li>
+                        <li>faster execution (compiled at build time)</li>
+                    <ol>
+                    </aside>
 				</section>
 
                 <section>
-                    <h2>Benefits</h2>
-                    <ol>
-                        <li class="fragment">maintainable (isolated, organized, logic-less)</li>
-                        <li class="fragment">smaller templating library (runtime only)</li>
-                        <li class="fragment">faster execution (compiled at build time)</li>
-                    <ol>
-                </section>
+                    <h2>fxKids</h2>
+                    <p class="fragment">Our co-ops had a bit of fun during a company hackday</p>
+				</section>
 
                 <section>
                     <h2>SASS</h2>
@@ -324,40 +400,20 @@
                 </section>
 
                 <section>
-                    <h2>Mobile first, responsive design</h2>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Get a Device Lab</h2>
-                    <img src="img/devicelab_before.jpg"/>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Better yet, organize it</h2>
-                    <img src="img/devicelab_after.jpg"/>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Remote debugging</h2>
-                    <p>Natively with Safari, Google Chrome</p>
-                    <p>3rd party library Weinre for IE, Firefox, Opera</p>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
                     <h2>Sourcemaps</h2>
                     <ul>
                         <li class="fragment">SASS</li>
                         <li class="fragment">Javascript</li>
                         <li class="fragment">Coffeescript</li>
                     </ul>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Living on the bleeding edge</h2>
+                    <p class="fragment">Manually upgrading Yeoman to 1.0.0 beta from 0.9.6</p>
+                    <p class="fragment">Subtle compilation errors with new version of Coffeescript</p>
                     <aside class="notes">
                     </aside>
                 </section>
