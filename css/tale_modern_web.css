@@ -1,0 +1,9 @@
+/* a couple of reveal.js overrides */
+.reveal section img.logo {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal pre {
+  box-shadow: none;
+}
