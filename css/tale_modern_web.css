@@ -2,6 +2,11 @@
 .reveal section img.logo {
   border: 0;
   box-shadow: none;
+  vertical-align: middle;
+}
+
+.reveal section img.multiple {
+  margin: 15px 20px;
 }
 
 .reveal pre {

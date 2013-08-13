@@ -7,7 +7,7 @@
 		<title>A Tale of Modern Web Development</title>
 
 		<meta name="description" content="The tools we picked and decision we made while turning OANDA's Java based fxTrade into a modern web application">
-		<meta name="author" content="Mark Oosterveld and Jerome Lecomte">
+		<meta name="author" content="Mark Oosterveld & Jerome Lecomte">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -39,7 +39,7 @@
 			<div class="slides">
 				<section>
 					<h1>A Tale of Modern Web Development</h1>
-                    <p>Mark Oosterveld & Jerome Lecomte</p>
+                    <p>By Mark Oosterveld & Jerome Lecomte</p>
 					<aside class="notes">
                     </aside>
 				</section>
@@ -47,17 +47,22 @@
 				<section>
 					<h2>About us</h2>
                     <ul>
-                        <li class="fragment">Mark</li>
-                        <li class="fragment">Jerome</li>
+                        <li class="fragment">Mark Oosterveld</li>
+                        <li class="fragment">Jerome Lecomte</li>
                     </ul>
 				</section>
 
 				<section>
 					<h2>About OANDA</h2>
+                    <img class="logo" src="img/oanda_logo.png"/>
+                </section>
+
+                <section>
+					<h2>Client trading interfaces</h2>
                     <ul>
-                        <li class="fragment">Where we were (Java)</li>
-                        <li class="fragment">Where we're at (Java, iOS, Android)</li>
-                        <li class="fragment">Where we want to be (HTML5, iOS, Android)</li>
+                        <li class="fragment">Where we were: Java</li>
+                        <li class="fragment">Where we're at: Java, iOS, Android</li>
+                        <li class="fragment">Where we want to be: HTML5, iOS, Android</li>
                     </ul>
 					<aside class="notes">
                         <p>Java from scratch vs Flash vs HTML5</p>
@@ -68,7 +73,7 @@
 					<h2>About the team</h2>
                     <ul>
                         <li class="fragment">2 senior full developers</li>
-                        <li class="fragment">2 junior co-op students (rotating every 4 months)</li>
+                        <li class="fragment">2 junior co-op students (every 4 months)</li>
                     </ul>
 					<aside class="notes">
                     </aside>
@@ -78,7 +83,7 @@
 					<h2>January 2nd 2013</h2>
                     <p class="fragment">4 days to decide on everything</p>
                     <p class="fragment">before the co-ops start</p>
-                    <a class="fragment" href="http://www.smashingmagazine.com/2012/12/22/talks-to-help-you-become-a-better-front-end-engineer-in-2013/">Smashing Magazine article "Talks To Help You Become A Better Front-End Engineer in 2013"</a>
+                    <p class="fragment">Smashing Magazine article <a href="http://www.smashingmagazine.com/2012/12/22/talks-to-help-you-become-a-better-front-end-engineer-in-2013/">"Talks To Help You Become A Better Front-End Engineer in 2013"</a>
 					<aside class="notes">
                     </aside>
 				</section>
@@ -86,85 +91,127 @@
 				<section>
 					<h2>Opinionated tools</h2>
                     <p class="fragment">Their way or the highway</p>
-                    <p class="fragment">Love them or hate them</p>
-                    <p class="fragment">Quick decision</p>
+                    <p class="fragment">Love them or hate them instantly</p>
+                    <p class="fragment">It's a quick decision</p>
 				</section>
+
+                <section>
+                    <h2>Yeoman</h2>
+                    <img class="logo" src="img/yeoman_logo.png"/>
+                </section>
+
+				<section>
+                    <h2>Rule #1</h2>
+				    <img width="800" height="600" src="/img/paulirish_cant_say_yeoman_without_saying.png" alt="Paul Irish & Yeoman">
+				</section>
+
+                <section>
+                    <h2>Grunt</h2>
+                    <img class="logo" src="img/grunt_logo.png"/>
+                </section>
+
+                <section>
+                    <h2>Javascript's response to make, ant...</h2>
+                    <p class="fragment">Just another Javascript file</p>
+                    <p class="fragment">Easy to extend</p>
+                    <p class="fragment">Lots of modules available</p>
+                </section>
+
+                <section>
+                    <h2>Gruntfile.js template</h2>
+                    <p class="fragment">build task</p>
+                    <p class="fragment">test task</p>
+                    <p class="fragment">watch task</p>
+                </section>
+
+                <section>
+                    <h2>Bower</h2>
+                    <img class="logo" src="img/bower_logo.png"/>
+                </section>
 
 				<section>
 					<h2>Backbone</h2>
-                    <p class="fragment">prior experience</p>
-                    <p class="fragment">ideal for client-side single-page application</p>
-                    <p class="fragment">simple MVC</p>
+                    <img class="logo" src="img/backbone_logo.png"/>
+                </section>
+
+                <section>
+                    <p>Prior experience</p>
+                    <p class="fragment">Ideal for client-side single-page application</p>
+                    <p class="fragment">Simple MVC</p>
 					<aside class="notes">
                         <p>Not as new as EmberJS and AngularJS, but 1 thing familiar amongst all the other new tech</p>
                     </aside>
 				</section>
 
+                <section>
+                    <h2>Behaviour-Driven Development</h2>
+                </section>
+
 				<section>
-					<h2>Coffeescript</h2>
-                    <p class="fragment">Safety of compiled language</p>
+                    <h2>Rule #1</h2>
+                    <img width="1024" height="550" src="img/onedoesnotjust_testsfirst.jpg"/>
+				</section>
+
+                <section>
+                    <h2>Gerrit, Github, Phabricator</h2>
+                    <img class="logo multiple" width="100" height="100" src="img/gerrit_logo.gif"/>
+                    <img class="logo multiple" width="150" height="150" src="img/github_logo.png"/>
+                    <img class="logo multiple" width="160" height="100" src="img/phabricator_logo.png"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Code Review</h2>
+                    <p class="fragment">Changes must be approved and verified before being merged into master</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Jenkins</h2>
+                    <img class="logo" src="img/jenkins_logo.png"/>
+                </section>
+
+                <section>
+                    <h2>Continuous deployment</h2>
+                    <p class="fragment">Testsuite run on every new commit</p>
+                    <p class="fragment">If successful, application packaged</p>
+                    <p class="fragment">Package deployed internally for stackeholders</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+ 				<section>
+ 				    <h2>No backend</h2>
+                    <p class="fragment">REST like API with CORS enabled</p>
+ 				</section>
+
+ 				<section>
+ 				    <h2>Coffeescript</h2>
+                    <img class="logo" src="img/coffeescript_logo.png"/>
+                </section>
+
+                <section>
+                    <p>Safety of compiled language</p>
                     <p class="fragment">Opinionated Javascript (the best parts)</p>
-				</section>
+ 				</section>
 
                 <section>
-                  <h2>Yeoman</h2>
-                  <img class="logo" src="img/yeoman_logo.png"/>
-                </section>
-
-				<section>
-          <h2>Rule #1</h2>
-				  <img width="800" height="600" src="/img/paulirish_cant_say_yeoman_without_saying.png" alt="Paul Irish & Yeoman">
-				</section>
-
-                <section>
-                  <h2>Grunt</h2>
-                  <img class="logo" src="img/grunt_logo.png"/>
-                </section>
-
-                <section>
-                  <h2>Grunt is...</h2>
-                  <p class="fragment">Javascript's response to make, ant...</p>
-                  <p class="fragment">Easy to extend</p>
-                  <p class="fragment">No language swich from your application</p>
-                  <p class="fragment">Large repository of modules</p>
-                </section>
-
-                <section>
-                  <h2>Gruntfile template</h2>
-                  <p class="fragment">build task</p>
-                  <p class="fragment">test task</p>
-                  <p class="fragment">watch task</p>
-                </section>
-
-                <section>
-                  <h2>Bower</h2>
-                  <img class="logo" src="img/bower_logo.png"/>
-                </section>
-
-                <section>
-                  <h2>Behaviour-Driven Development</h2>
-                </section>
-
-				<section>
-          <h2>Rule #1</h2>
-          <img width="1024" height="550" src="http://iome.me/odns/one+does+not+just+write+10+lines+of+code/without+writing+tests+first"/>
-				</section>
-
-        <section>
-          <h2>RequireJS</h2>
-          <img class="logo" src="img/requirejs_logo.png"/>
+                    <h2>RequireJS</h2>
+                    <img class="logo" src="img/requirejs_logo.png"/>
 				</section>
           
 				<section>
-          <h2>Handlebars</h2>
-          <img class="logo" src="img/handlebars_logo.png"/>
+                    <h2>Handlebars</h2>
+                    <img class="logo" src="img/handlebars_logo.png"/>
 				</section>
 
 				<section>
-          <h2>Rule #1: don't mix markup and code</h2>
-          <p>TradeListView.js</p>
-          <pre>
-            <code>
+                    <h2>Rule #1: don't mix markup and code</h2>
+                    <p>TradeListView.js</p>
+                    <pre>
+                        <code>
   $('.trades-list').append(
     '<div class="trades-item">
       <span class="trade-id">' + trade.id + '</span>
@@ -172,51 +219,51 @@
       ...
      </div>'
   );
-            </code>
-          </pre>
+                        </code>
+                    </pre>
 				</section>
 
 				<section>
-          <h2>Better but still fragile</h2>
-          <p>index.html</p>
-          <pre>
-            <code>
+                    <h2>Better but still fragile</h2>
+                    <p>index.html</p>
+                    <pre>
+                        <code>
   <script type="text/template" id="tmpl-trades-item">
     <div class="trades-item">
       <span class="trade-id"></span>
       <span class="trade-pair"></span>
     </div>
   </script>
-            </code>
-          </pre>
-          <p>TradeListView.js</p>
-          <pre>
-            <code>
+                        </code>
+                    </pre>
+                    <p>TradeListView.js</p>
+                    <pre>
+                        <code>
   var trade_tmpl = $('#tmpl-trades-item');
   trade_tmpl.find('.trade-id').text(trade.id);
   trade_tmpl.find('.trade-pair').text(trade.get('pair'));
 
   $('.trades-list').append(trade_tmpl.html());
-            </code>
-          </pre>
+                        </code>
+                    </pre>
 				</section>
 
 				<section>
-          <h2>Handlebars template</h2>
-          <p>index.html</p>
-          <pre>
-            <code>
+                    <h2>Handlebars template</h2>
+                    <p>index.html</p>
+                    <pre>
+                        <code>
   <script type="text/x-handlebars-template" id="tmpl-trades-item">
     <div class="trades-item">
       <span class="trade-id">{{id}}</span>
       <span class="trade-pair">{{pair}}</span>
     </div>
   </script>
-            </code>
-          </pre>
-          <p>TradeListView.js</p>
-          <pre>
-            <code>
+                        </code>
+                    </pre>
+                    <p>TradeListView.js</p>
+                    <pre>
+                        <code>
   var template = Handlebars.compile($('#tmpl-trades-item').html());
 
   var html = template({
@@ -225,42 +272,95 @@
   });
 
   $('.trades-list').append(html);
-            </code>
-          </pre>
+                        </code>
+                    </pre>
 				</section>
 
 				<section>
-          <h2>Template precompilation</h2>
-          <p>trade-item.hbs</p>
-          <pre>
-            <code>
+                    <h2>Template precompilation</h2>
+                    <p>trade-item.hbs</p>
+                    <pre>
+                        <code>
   <div class="trades-item">
     <span class="trade-id">{{id}}</span>
     <span class="trade-pair">{{pair}}</span>
   </div>
-            </code>
-          </pre>
-          <p>TradeListView.js</p>
-          <pre>
-            <code>
+                        </code>
+                    </pre>
+                    <p>TradeListView.js</p>
+                    <pre>
+                        <code>
   var html = Handlebars.template.trades-item({
     id: trade.id,
     pair: trade.get('pair')
   });
 
   $('.trades-list').append(html);
-            </code>
-          </pre>
+                        </code>
+                    </pre>
 				</section>
 
-        <section>
-          <h2>Benefits</h2>
-          <ol>
-            <li class="fragment">maintainable (isolated, organized, logic-less)</li>
-            <li class="fragment">smaller templating library (runtime only)</li>
-            <li class="fragment">faster execution (compiled at build time)</li>
-          <ol>
-        </section>
+                <section>
+                    <h2>Benefits</h2>
+                    <ol>
+                        <li class="fragment">maintainable (isolated, organized, logic-less)</li>
+                        <li class="fragment">smaller templating library (runtime only)</li>
+                        <li class="fragment">faster execution (compiled at build time)</li>
+                    <ol>
+                </section>
+
+                <section>
+                    <h2>SASS</h2>
+                    <img class="logo" src="img/sass_logo.gif"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <p>Not opinionated</p>
+                    <p class="fragment"><a href="smacss.com">Scalable and Modular Architecture for CSS</a></p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Mobile first, responsive design</h2>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Get a Device Lab</h2>
+                    <img src="img/devicelab_before.jpg"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Better yet, organize it</h2>
+                    <img src="img/devicelab_after.jpg"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Remote debugging</h2>
+                    <p>Natively with Safari, Google Chrome</p>
+                    <p>3rd party library Weinre for IE, Firefox, Opera</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Sourcemaps</h2>
+                    <ul>
+                        <li class="fragment">SASS</li>
+                        <li class="fragment">Javascript</li>
+                        <li class="fragment">Coffeescript</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+                </section>
 
 				<section>
 					<h1>THE END</h1>
