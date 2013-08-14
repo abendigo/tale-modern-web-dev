@@ -86,6 +86,8 @@
                         <li class="fragment">Mobile first, Responsive design</li>
                         <li class="fragment">No backend</li>
                         <li class="fragment">Behaviour-Driven Development</li>
+                        <li class="fragment">Code review</li>
+                        <li class="fragment">Continuous deployment</li>
                     </ul>
                 </section>
 
@@ -131,6 +133,22 @@
                     <img width="1024" height="550" src="img/onedoesnotjust_testsfirst.jpg"/>
                     <p>(courtesy of <a htref="http://iome.me">iome.me</a>)</p>
 				</section>
+
+                <section>
+                    <h2>Code Review</h2>
+                    <p class="fragment">Changes must be approved and verified before being merged into master</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Continuous deployment</h2>
+                    <p class="fragment">Testsuite run on every new commit</p>
+                    <p class="fragment">If successful, application packaged</p>
+                    <p class="fragment">Package deployed internally for stackeholders</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
 
 				<section>
 					<h2>January 2nd 2013</h2>
@@ -262,17 +280,16 @@ define('Creating an account model with data from the API', function() {
                 </section>
 
                 <section>
-                    <h2>Continuous deployment</h2>
-                    <p class="fragment">Testsuite run on every new commit</p>
-                    <p class="fragment">If successful, application packaged</p>
-                    <p class="fragment">Package deployed internally for stackeholders</p>
+                    <h2>Deployment strategy</h2>
+                    <p class="fragment">Figure it out early on to mitigate that risk</p>
+                    <p class="fragment">If need be, the application can ship today</p>
                     <aside class="notes">
                     </aside>
                 </section>
 
                 <section>
-                    <h2>Gerrit</h2>
-                    <h3>(and later on Github, Phabricator)</h3>
+                    <h2>Gerrit (and later on</h2>
+                    <h3>Github, Phabricator)</h3>
                     <img class="logo multiple" width="100" height="100" src="img/gerrit_logo.gif"/>
                     <img class="logo multiple" width="150" height="150" src="img/github_logo.png"/>
                     <img class="logo multiple" width="160" height="100" src="img/phabricator_logo.png"/>
@@ -281,10 +298,16 @@ define('Creating an account model with data from the API', function() {
                 </section>
 
                 <section>
-                    <h2>Code Review</h2>
-                    <p class="fragment">Changes must be approved and verified before being merged into master</p>
-                    <aside class="notes">
-                    </aside>
+                    <h2>Face-off</h2>
+                    <p class="fragment"><b>Gerrit</b></p>
+                    <p class="fragment">(+) Remote git repository, automatically keeps in sync with upstream</p>
+                    <p class="fragment">(-) Austere UI, 1 review per commit</p>
+                    <p class="fragment"><b>Github</b></p>
+                    <p class="fragment">(+) Very popular , 1 review per branch</p>
+                    <p class="fragment">(-) Manually keep fork in sync with upstream, lots of merge clouds history</p>
+                    <p class="fragment"><b>Phabricator</b></p>
+                    <p class="fragment">(+) Patch files, 1 review per branch, geeky humor</p>
+                    <p class="fragment">(-) PHP?</p>
                 </section>
 
                 <section>
