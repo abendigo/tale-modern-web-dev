@@ -119,7 +119,7 @@
 
  				<section>
  				    <h2>No backend</h2>
-                    <p class="fragment">REST like API with CORS enabled</p>
+                    <p class="fragment">REST-like API with CORS enabled</p>
  				</section>
 
                 <section>
@@ -129,7 +129,7 @@
 				<section>
                     <h2>Rule #1</h2>
                     <img width="1024" height="550" src="img/onedoesnotjust_testsfirst.jpg"/>
-                    <p>courtesy of iome.me</p>
+                    <p>(courtesy of <a htref="http://iome.me">iome.me</a>)</p>
 				</section>
 
 				<section>
@@ -164,7 +164,7 @@
                 </section>
 
                 <section>
-                    <h2>Javascript's response to make, ant...</h2>
+                    <h2>Javascript's response to makefiles</h2>
                     <p class="fragment">Just another Javascript file</p>
                     <p class="fragment">Easy to extend</p>
                     <p class="fragment">Lots of modules available</p>
@@ -189,8 +189,7 @@
 
                 <section>
                     <h2>Mocha, Chai & Sinon.JS</h2>
-                    <pre class="fragment">
-                        <code>
+                    <pre class="fragment"><code>
 define('Creating an account model with data from the API', function() {
     var account;
     before(function() {
@@ -204,8 +203,21 @@ define('Creating an account model with data from the API', function() {
         account.get('name').should.equal('Primary');
     });
 });
-                        </code>
-                    </pre>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>SASS</h2>
+                    <img class="logo" src="img/sass_logo.gif"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <p>Not opinionated</p>
+                    <p class="fragment"><a href="smacss.com">Scalable and Modular Architecture for CSS</a></p>
+                    <aside class="notes">
+                    </aside>
                 </section>
 
 				<section>
@@ -234,26 +246,14 @@ define('Creating an account model with data from the API', function() {
  				</section>
 
                 <section>
+                    <h2>Let's get started</h2>
+                    <img src="img/gitk_beginning.png"/>
+                </section>
+
+                <section>
                     <h2>Group coding session</h2>
-                        <p class="fragment">Get familiar with BDD...</p>
-                        <p class="fragment">... and Coffeescript</p>
-                        <p class="fragment">Layout core classes of Backbone application</p>
-                </section>
-
-                <section>
-                    <h2>Gerrit, Github, Phabricator</h2>
-                    <img class="logo multiple" width="100" height="100" src="img/gerrit_logo.gif"/>
-                    <img class="logo multiple" width="150" height="150" src="img/github_logo.png"/>
-                    <img class="logo multiple" width="160" height="100" src="img/phabricator_logo.png"/>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Code Review</h2>
-                    <p class="fragment">Changes must be approved and verified before being merged into master</p>
-                    <aside class="notes">
-                    </aside>
+                    <p class="fragment">Layout core classes of Backbone application</p>
+                    <p class="fragment">Get familiar with BDD & Coffeescript</p>
                 </section>
 
                 <section>
@@ -271,10 +271,60 @@ define('Creating an account model with data from the API', function() {
                 </section>
 
                 <section>
+                    <h2>Gerrit</h2>
+                    <h3>(and later on Github, Phabricator)</h3>
+                    <img class="logo multiple" width="100" height="100" src="img/gerrit_logo.gif"/>
+                    <img class="logo multiple" width="150" height="150" src="img/github_logo.png"/>
+                    <img class="logo multiple" width="160" height="100" src="img/phabricator_logo.png"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Code Review</h2>
+                    <p class="fragment">Changes must be approved and verified before being merged into master</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
                     <h2>RequireJS</h2>
                     <img class="logo" src="img/requirejs_logo.png"/>
 				</section>
           
+                <section>
+                    <h2>Asynchronuous Module Definition</h2>
+                    <p class="fragment">Too many modules leads to &lt;script&gt; ordering hell</p>
+                    <p class="fragment">Just express the module dependencies</p>
+                    <p class="fragment">And let RequireJS figure out the loading order</p>
+                </section>
+
+                <section>
+                    <h2>AMD in action</h2>
+                    <p>index.html</p>
+                    <pre><code>
+<script data-main="main" src="require.js"></script>      
+                    </code></pre>
+                    <p>main.js</p>
+                    <pre><code>
+  require.config({ paths: { ... } });
+
+  require(['views/AccountDetailsView'], function(AccountDetailsView) {
+      var app = new AccountDetailsView();
+  });
+                    </code></pre>
+                    <p>AccountDetailsView.js</p>
+                    <pre><code>
+  define(['models/AccountModel'], function(AccountModel) {
+    var AccountDetailsView = function() {
+        this.account = new AccountModel();
+    }
+
+    return AccountDetailsView;
+  });
+                    </code></pre>
+				</section>
+
 				<section>
                     <h2>Handlebars</h2>
                     <img class="logo" src="img/handlebars_logo.png"/>
@@ -283,8 +333,7 @@ define('Creating an account model with data from the API', function() {
 				<section>
                     <h2>Rule #1: don't mix markup and code</h2>
                     <p>TradeListView.js</p>
-                    <pre>
-                        <code>
+                    <pre><code>
   $('.trades-list').append(
     '<div class="trades-item">
       <span class="trade-id">' + trade.id + '</span>
@@ -292,51 +341,43 @@ define('Creating an account model with data from the API', function() {
       ...
      </div>'
   );
-                        </code>
-                    </pre>
+                    </code></pre>
 				</section>
 
 				<section>
                     <h2>Better but still fragile</h2>
                     <p>index.html</p>
-                    <pre>
-                        <code>
+                    <pre><code>
   <script type="text/template" id="tmpl-trades-item">
     <div class="trades-item">
       <span class="trade-id"></span>
       <span class="trade-pair"></span>
     </div>
   </script>
-                        </code>
-                    </pre>
+                    </code></pre>
                     <p>TradeListView.js</p>
-                    <pre>
-                        <code>
+                    <pre><code>
   var trade_tmpl = $('#tmpl-trades-item');
   trade_tmpl.find('.trade-id').text(trade.id);
   trade_tmpl.find('.trade-pair').text(trade.get('pair'));
 
   $('.trades-list').append(trade_tmpl.html());
-                        </code>
-                    </pre>
+                    </code></pre>
 				</section>
 
 				<section>
                     <h2>Handlebars template</h2>
                     <p>index.html</p>
-                    <pre>
-                        <code>
+                    <pre><code>
   <script type="text/x-handlebars-template" id="tmpl-trades-item">
     <div class="trades-item">
       <span class="trade-id">{{id}}</span>
       <span class="trade-pair">{{pair}}</span>
     </div>
   </script>
-                        </code>
-                    </pre>
+                    </code></pre>
                     <p>TradeListView.js</p>
-                    <pre>
-                        <code>
+                    <pre><code>
   var template = Handlebars.compile($('#tmpl-trades-item').html());
 
   var html = template({
@@ -345,32 +386,27 @@ define('Creating an account model with data from the API', function() {
   });
 
   $('.trades-list').append(html);
-                        </code>
-                    </pre>
+                    </code></pre>
 				</section>
 
 				<section>
                     <h2>Template precompilation</h2>
                     <p>trade-item.hbs</p>
-                    <pre>
-                        <code>
+                    <pre><code>
   <div class="trades-item">
     <span class="trade-id">{{id}}</span>
     <span class="trade-pair">{{pair}}</span>
   </div>
-                        </code>
-                    </pre>
+                    </code></pre>
                     <p>TradeListView.js</p>
-                    <pre>
-                        <code>
+                    <pre><code>
   var html = Handlebars.template.trades-item({
     id: trade.id,
     pair: trade.get('pair')
   });
 
   $('.trades-list').append(html);
-                        </code>
-                    </pre>
+                    </code></pre>
                     <aside class="notes">
                     <ol>
                         <li>maintainable (isolated, organized, logic-less)</li>
@@ -381,20 +417,24 @@ define('Creating an account model with data from the API', function() {
 				</section>
 
                 <section>
+                    <h2>Minimum Viable Product Completed</h2>
+                </section>
+
+                <section>
+                    <h2>May 1st 2013</h2>
+                    <p class="fragment">New round of co-ops</p>
+                    <p class="fragment">UI/UX designer hired</p>
+                </section>
+
+                <section>
                     <h2>fxKids</h2>
                     <p class="fragment">Our co-ops had a bit of fun during a company hackday</p>
 				</section>
 
                 <section>
-                    <h2>SASS</h2>
-                    <img class="logo" src="img/sass_logo.gif"/>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <p>Not opinionated</p>
-                    <p class="fragment"><a href="smacss.com">Scalable and Modular Architecture for CSS</a></p>
+                    <h2>Living on the bleeding edge</h2>
+                    <p class="fragment">Manually upgrading Yeoman to 1.0.0 beta from 0.9.6</p>
+                    <p class="fragment">Coffeescript compiler got stricter in 1.6.2</p>
                     <aside class="notes">
                     </aside>
                 </section>
@@ -406,14 +446,6 @@ define('Creating an account model with data from the API', function() {
                         <li class="fragment">Javascript</li>
                         <li class="fragment">Coffeescript</li>
                     </ul>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Living on the bleeding edge</h2>
-                    <p class="fragment">Manually upgrading Yeoman to 1.0.0 beta from 0.9.6</p>
-                    <p class="fragment">Subtle compilation errors with new version of Coffeescript</p>
                     <aside class="notes">
                     </aside>
                 </section>
