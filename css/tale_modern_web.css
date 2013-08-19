@@ -5,6 +5,10 @@
   vertical-align: middle;
 }
 
+.reveal section img.embed {
+  vertical-align: -50%;
+}
+
 .reveal section img.multiple {
   margin: 15px 20px;
 }
