@@ -1,0 +1,9 @@
+yeoman
+
+npm -g install yo   // install yeoman
+yo                  // install generator-backbone
+yo backbone         // generate your backbone project
+grunt server
+edit index.html     // 'hello html5 toronto' -> live page reload
+edit script/main.js // add alert('hello again html5 toronto') -> live page reload
+edit styles/main.scss // add body { background-color: red; } -> live style update without page reload (since no alert)
