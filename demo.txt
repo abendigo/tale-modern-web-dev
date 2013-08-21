@@ -1,9 +1,65 @@
 yeoman
 
-npm -g install yo   // install yeoman
 yo                  // install generator-backbone
 yo backbone         // generate your backbone project
 grunt server
 edit index.html     // 'hello html5 toronto' -> live page reload
 edit script/main.js // add alert('hello again html5 toronto') -> live page reload
 edit styles/main.scss // add body { background-color: red; } -> live style update without page reload (since no alert)
+
+grunt test
+edit Gruntfile.js to get grunt server:test
+80             test: {          
+81                 options: {   
+82                     middleware: function (connect) {
+83                         return [
+84                             lrSnippet,
+85                             mountFolder(connect, '.tmp'),
+86                             mountFolder(connect, 'test'),
+87                             mountFolder(connect, yeomanConfig.app)
+88                         ];   
+89                     }        
+90                 }            
+91             }, 
+
+297         if (target === 'test') {  
+298             return grunt.task.run([
+299                 'clean:server',
+300                 'coffee',
+301                 'createDefaultTemplate',
+302                 'jst',
+303                 'compass',
+304                 'connect:test',
+305                 'watch'
+306             ]);  
+307         }    
+
+102         open: {                                                              
+103             server: {                                                        
+104                 path: 'http://localhost:<%= connect.options.port %>/app.html'
+105             }                                                                
+106         },      
+
+45             livereload: {
+46                 options: {
+47                     livereload: LIVERELOAD_PORT
+48                 },  
+49                 files: [
+50                     '<%= yeoman.app %>/*.html',
+51                     'test/*.html',
+52                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+53                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+54                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+55                 ]   
+56             },
+
+grunt server:test -> leak in mocha tests
+
+edit test/index.html
+
+11     <script>mocha.setup({
+12         ui: 'bdd',       
+13         ignoreLeaks: true,
+14         bail: false      
+15     })</script>
+

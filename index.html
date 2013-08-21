@@ -66,15 +66,25 @@
                     </aside>
 				</section>
 
+				<section>
+					<h2>About the team</h2>
+                    <ul>
+                        <li class="fragment">2 senior fulltime developers</li>
+                        <li class="fragment">2 junior co-op students (every 4 months)</li>
+                    </ul>
+					<aside class="notes">
+                    </aside>
+				</section>
+
                 <section>
                     <h2>Our goals</h2>
                     <ul>
                         <li class="fragment">HTML5 single page application</li>
-                        <li class="fragment">Behaviour-Driven Development</li>
                         <li class="fragment">Mobile first, Responsive design</li>
-                        <li class="fragment">No new backend</li>
+                        <li class="fragment">No new backend development</li>
+                        <li class="fragment">Behaviour-Driven Development</li>
                         <li class="fragment">Code review</li>
-                        <li class="fragment">Continuous deployment</li>
+                        <li class="fragment">Continuous integration & deployment</li>
                     </ul>
                 </section>
 
@@ -86,15 +96,6 @@
                         <li class="fragment">Jenkins</li>
                     </ul>
                 </section>
-				<section>
-					<h2>About the team</h2>
-                    <ul>
-                        <li class="fragment">2 senior fulltime developers</li>
-                        <li class="fragment">2 junior co-op students (every 4 months)</li>
-                    </ul>
-					<aside class="notes">
-                    </aside>
-				</section>
 
 				<section>
 					<h2>In the beginning...</h2>
@@ -109,6 +110,7 @@
                 <section>
                     <h2>Yeoman</h2>
                     <img class="logo" src="img/yeoman_logo.png"/>
+                    <p>yeoman.io</p>
 					<aside class="notes">
                         http://yeoman.io
 
@@ -128,6 +130,7 @@
                     <h2>Project scaffolding made easy</h2>
                     <p class="fragment">The best tools already configured</p>
                     <p class="fragment">The best practices already applied</p>
+                    <p class="fragment">Demo time</p>
                 </section>
 
                 <section>
@@ -150,6 +153,7 @@
                     <p class="fragment">Unit testing with PhantomJS</p>
                     <p class="fragment">Preview server</p>
                     <p class="fragment blink">LiveReload code & stylesheets</p>
+                    <p class="fragment">Demo time</p>
                 </section>
 
                 <section>
@@ -171,11 +175,37 @@
                     <h2>It's just Javascript</h2>
                     <p class="fragment">Only the best parts</p>
                     <p class="fragment">Safety of compiled language</p>
+                    <p class="fragment">Demo time</p>
  				</section>
 
                 <section>
                     <h2>Behaviour-Driven Development</h2>
                 </section>
+
+				<section>
+                    <h2>Why do cars have breaks?</h2>
+                    <img src="img/carbreaks-why-car-have-breaks.jpg"/>
+				</section>
+                
+				<section>
+                    <h2>So they can go fast!</h2>
+                    <img src="img/carbreaks-so-they-can-go-fast.jpg"/>
+				</section>
+                
+				<section>
+                    <h2>Drive fast without breaks...</h2>
+                    <img src="img/carbreaks-drive-fast-hit-something.jpg"/>
+				</section>
+                
+				<section>
+                    <h2>... or drive slow</h2>
+                    <img src="img/carbreaks-drive-slowly.jpg"/>
+				</section>
+
+				<section>
+                    <h2>Breaks & BDD are your ticket to the fast lane</h2>
+                    <img src="img/carbreaks-bdd-safety-net.jpg"/>
+				</section>
 
 				<section>
                     <h2>Rule #1</h2>
@@ -501,9 +531,9 @@ define('Creating an account model with data from the API', function() {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-					{ src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					//{ src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
