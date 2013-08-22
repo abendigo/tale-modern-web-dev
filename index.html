@@ -219,35 +219,46 @@
 				<section>
                     <h2>Rule #1</h2>
                     <img width="1024" height="550" src="img/onedoesnotjust_testsfirst.jpg"/>
-                    <p>(courtesy of <a htref="http://iome.me">iome.me</a>)</p>
+                    <p>(courtesy of iome.me)</p>
 				</section>
 
                 <section>
                     <h2>Mocha, Chai & Sinon.JS</h2>
-                    <pre class="fragment"><code>
-describe 'Creating an account model with data from the API', ->
+                    <p>visionmedia.github.io/mocha</p>
+                    <p>chaijs.com</p>
+                    <p>sinonjs.org</p>
+                </section>
+
+                <section>
+                    <h2>Arrange, Act, Assert, Restore</h2>
+                    <pre class="fragment"><code>describe 'Creating an account model with data from the API', ->
     account = 0
 
     before ->
-        # Act
-        account = new Backbone.Model
+        # Arrange
+        data =
             accountName: 'Primary'
+        # Act
+        account = new Backbone.Model data
 
     # Assert
     it 'Translates the accountName property', ->
         account.get('name').should.equal 'Primary'
-                    </code></pre>
+
+    # Restore
+    after -></code></pre>
                 </section>
 
                 <section>
                     <h2>RequireJS</h2>
                     <img class="logo" src="img/requirejs_logo.png"/>
+                    <p>requirejs.org</p>
 				</section>
           
                 <section>
                     <h2>Asynchronuous Module Definition (AMD)</h2>
                     <p class="fragment">Too many modules leads to &lt;script&gt; ordering hell</p>
-                    <p class="fragment">Just express the module dependencies</p>
+                    <p class="fragment">Just explicit the module dependencies</p>
                     <p class="fragment">And let RequireJS figure out the loading order</p>
                 </section>
 
@@ -259,9 +270,6 @@ describe 'Creating an account model with data from the API', ->
                     </code></pre>
                     <p>main.coffee</p>
                     <pre><code>
-  require.config
-    paths:  #... 
-
   require ['views/AccountDetailsView'], (AccountDetailsView) ->
       app = new AccountDetailsView()
                     </code></pre>
@@ -277,6 +285,7 @@ describe 'Creating an account model with data from the API', ->
 				<section>
 					<h2>Backbone</h2>
                     <img class="logo" src="img/backbone_logo.png"/>
+                    <p>backbonejs.org</p>
                 </section>
 
                 <section>
@@ -290,13 +299,31 @@ describe 'Creating an account model with data from the API', ->
 				</section>
 
                 <section>
-                    <h2>Living on the bleeding edge</h2>
-                    <p class="fragment">Manually upgrading Yeoman to 1.0.0 beta from 0.9.6</p>
-                    <p class="fragment">Coffeescript compiler got stricter in 1.6.2</p>
+                    <h2>SASS</h2>
+                    <img class="logo" src="img/sass_logo.gif"/>
+                    <p>sass-lang.com</p>
                     <aside class="notes">
                     </aside>
                 </section>
 
+                <section>
+                    <h2>Extends CSS with...</h2>
+                    <p class="fragment">Variables</p>
+                    <p class="fragment">Nesting rules</p>
+                    <p class="fragment">Mixins</p>
+                    <p class="fragment">And more</p>
+                </section>
+
+                <section>
+                    <h2>Because CSS is essentially...</h2>
+                    <img src="img/css_familyguy.gif"/>
+                    <p class="fragment">Demo time</p>
+                    <aside class="notes">
+                        <p><a href="smacss.com">Scalable and Modular Architecture for CSS</a></p>
+                    </aside>
+                </section>
+
+                
                 <section>
                     <h2>Sourcemaps</h2>
                     <ul>
@@ -311,13 +338,14 @@ describe 'Creating an account model with data from the API', ->
 				<section>
                     <h2>Handlebars</h2>
                     <img class="logo" src="img/handlebars_logo.png"/>
+                    <p>handlebarsjs.com</p>
 				</section>
 
 				<section>
                     <h2>Rule #1: don't mix markup and code</h2>
-                    <p>TradeListView.js</p>
+                    <p>TradeListView.coffee</p>
                     <pre><code>
-  $('.trades-list').append(
+  $('.trades-list').append 
     '<div class="trades-item">
       <span class="trade-id">' + trade.id + '</span>
       <span class="trade-pair">' + trade.get('pair') + '</span>
@@ -400,22 +428,15 @@ describe 'Creating an account model with data from the API', ->
 				</section>
 
                 <section>
+                    <h2>Living on the bleeding edge</h2>
+                    <p class="fragment">Manually upgrading Yeoman to 1.0.0 beta from 0.9.6</p>
+                    <p class="fragment">Coffeescript compiler got stricter in 1.6.2</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
                     <h2>Mobile first, responsive design</h2>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>SASS</h2>
-                    <img class="logo" src="img/sass_logo.gif"/>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <p>Not opinionated</p>
-                    <img class="fragment" src="img/css_familyguy.gif"/>
-                    <p class="fragment"><a href="smacss.com">Scalable and Modular Architecture for CSS</a></p>
                     <aside class="notes">
                     </aside>
                 </section>
@@ -448,8 +469,8 @@ describe 'Creating an account model with data from the API', ->
                 </section>
 
  				<section>
- 				    <h2>No backend</h2>
-                    <p class="fragment">REST-like API with CORS enabled</p>
+ 				    <h2>No new backend development</h2>
+                    <p class="fragment">REST-like API with Cross-Origin Resource Sharing</p>
  				</section>
 
                 <section>
@@ -478,17 +499,20 @@ describe 'Creating an account model with data from the API', ->
                 </section>
 
                 <section>
-                    <h2>Continuous deployment</h2>
-                    <p class="fragment">Testsuite run on every new commit</p>
-                    <p class="fragment">If successful, application packaged</p>
-                    <p class="fragment">Package deployed internally for stakeholders</p>
-                    <aside class="notes">
-                    </aside>
+                    <h2>Jenkins</h2>
+                    <img class="logo" src="img/jenkins_logo.png"/>
+                    <p>jenkins-ci.org</p>
                 </section>
 
                 <section>
-                    <h2>Jenkins</h2>
-                    <img class="logo" src="img/jenkins_logo.png"/>
+                    <h2>Continuous integration & deployment</h2>
+                    <p class="fragment">Code sitting in your repository is software inventory (Joel Spolsky)</p>
+                    <p class="fragment">Testsuite run on every new commit</p>
+                    <p class="fragment">If successful, application packaged</p>
+                    <p class="fragment">Package deployed to production</p>
+                    <p class="fragment">Monitor change of trends in key metrics</p>
+                    <aside class="notes">
+                    </aside>
                 </section>
 
                 <section>
@@ -500,9 +524,10 @@ describe 'Creating an account model with data from the API', ->
                 </section>
 
 				<section>
-					<h1>THE END</h1>
+					<h2>Contact us</h2>
+                    <p>marko@oanda.com</p>
+                    <p>jerome@oanda.com</p>
 				</section>
-
 			</div>
 
 		</div>
