@@ -289,7 +289,7 @@
                 </section>
 
                 <section>
-                    <h2>Simple MVC</h2>
+                    <h2>Simple Model-View-Controller</h2>
                     <p class="fragment">Ideal for client-side single-page application</p>
                     <p class="fragment">Prior experience</p>
                     <p class="fragment">Demo time</p>
@@ -346,12 +346,11 @@
                     <p>TradeListView.coffee</p>
                     <pre><code>
   $('.trades-list').append 
-    '<div class="trades-item">
-      <span class="trade-id">' + trade.id + '</span>
-      <span class="trade-pair">' + trade.get('pair') + '</span>
+    "<div class="trades-item">
+      <span class="trade-id">#{trade.id}</span>
+      <span class="trade-pair">#{trade.get 'pair'}</span>
       ...
-     </div>'
-  );
+     </div>"
                     </code></pre>
 				</section>
 
@@ -366,13 +365,13 @@
     </div>
   </script>
                     </code></pre>
-                    <p>TradeListView.js</p>
+                    <p>TradeListView.Coffee</p>
                     <pre><code>
-  var trade_tmpl = $('#tmpl-trades-item');
-  trade_tmpl.find('.trade-id').text(trade.id);
-  trade_tmpl.find('.trade-pair').text(trade.get('pair'));
+  trade_tmpl = $ '#tmpl-trades-item'
+  trade_tmpl.find('.trade-id').text trade.id
+  trade_tmpl.find('.trade-pair').text trade.get 'pair'
 
-  $('.trades-list').append(trade_tmpl.html());
+  $('.trades-list').append trade_tmpl.html()
                     </code></pre>
 				</section>
 
@@ -387,36 +386,34 @@
     </div>
   </script>
                     </code></pre>
-                    <p>TradeListView.js</p>
+                    <p>TradeListView.coffee</p>
                     <pre><code>
-  var template = Handlebars.compile($('#tmpl-trades-item').html());
+  template = Handlebars.compile $('#tmpl-trades-item').html()
 
-  var html = template({
-    id: trade.id,
-    pair: trade.get('pair')
-  });
+  html = template
+    id: trade.id
+    pair: trade.get 'pair'
 
-  $('.trades-list').append(html);
+  $('.trades-list').append html
                     </code></pre>
 				</section>
 
 				<section>
                     <h2>Template precompilation</h2>
-                    <p>trade-item.hbs</p>
+                    <p>trade_item.hbs</p>
                     <pre><code>
   <div class="trades-item">
     <span class="trade-id">{{id}}</span>
     <span class="trade-pair">{{pair}}</span>
   </div>
                     </code></pre>
-                    <p>TradeListView.js</p>
+                    <p>TradeListView.coffee</p>
                     <pre><code>
-  var html = Handlebars.template.trades-item({
-    id: trade.id,
-    pair: trade.get('pair')
-  });
+  html = Handlebars.template.trades_item
+    id: trade.id
+    pair: trade.get 'pair'
 
-  $('.trades-list').append(html);
+  $('.trades-list').append html
                     </code></pre>
                     <aside class="notes">
                     <ol>
@@ -507,10 +504,10 @@
                 <section>
                     <h2>Continuous integration & deployment</h2>
                     <p class="fragment">Code sitting in your repository is software inventory (Joel Spolsky)</p>
-                    <p class="fragment">Testsuite run on every new commit</p>
-                    <p class="fragment">If successful, application packaged</p>
-                    <p class="fragment">Package deployed to production</p>
-                    <p class="fragment">Monitor change of trends in key metrics</p>
+                    <p class="fragment">Run testsuite on every new commit</p>
+                    <p class="fragment">If successful, package application</p>
+                    <p class="fragment">Deploy package to production</p>
+                    <p class="fragment">Monitor trend changes in key metrics</p>
                     <aside class="notes">
                     </aside>
                 </section>

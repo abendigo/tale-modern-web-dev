@@ -33,7 +33,9 @@ o =
    b: 2
    c: 3
 
-a = ( k + '=' + v for k, v in o )
+a = ( "#{k}=#{v}" for k, v of o )
+
+alert a;
 
 class Rate
    constructor: (@bid, @ask) ->
