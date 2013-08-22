@@ -136,6 +136,7 @@
                 <section>
                     <h2>Grunt</h2>
                     <img class="logo" src="img/grunt_logo.png"/>
+                    <p>gruntjs.com</p>
 					<aside class="notes">
                     </aside>
                 </section>
@@ -159,6 +160,7 @@
                 <section>
                     <h2>Bower</h2>
                     <img class="logo" src="img/bower_logo.png"/>
+                    <p>bower.io</p>
                 </section>
 
                 <section>
@@ -166,9 +168,16 @@
                     <p class="fragment">Like 'apt-get install' for client-side Javascript libraries</p>
                 </section>
 
+                <section>
+                    <h2>Group coding session</h2>
+                    <p class="fragment">Layout core classes of Backbone application</p>
+                    <p class="fragment">Get familiar with BDD & Coffeescript</p>
+                </section>
+
  				<section>
  				    <h2>Coffeescript</h2>
                     <img class="logo" src="img/coffeescript_logo.png"/>
+                    <p>coffeescript.org</p>
                 </section>
 
                 <section>
@@ -216,60 +225,19 @@
                 <section>
                     <h2>Mocha, Chai & Sinon.JS</h2>
                     <pre class="fragment"><code>
-define('Creating an account model with data from the API', function() {
-    var account;
-    before(function() {
-        // Act
-        account = new Backbone.Model({
+describe 'Creating an account model with data from the API', ->
+    account = 0
+
+    before ->
+        # Act
+        account = new Backbone.Model
             accountName: 'Primary'
-        });
-    });
-    // Assert
-    it('Translates the accountName property', function() {
-        account.get('name').should.equal('Primary');
-    });
-});
+
+    # Assert
+    it 'Translates the accountName property', ->
+        account.get('name').should.equal 'Primary'
                     </code></pre>
                 </section>
-
-                <section>
-                    <h2>Group coding session</h2>
-                    <p class="fragment">Layout core classes of Backbone application</p>
-                    <p class="fragment">Get familiar with BDD & Coffeescript</p>
-                </section>
-
-                <section>
-                    <h2>Living on the bleeding edge</h2>
-                    <p class="fragment">Manually upgrading Yeoman to 1.0.0 beta from 0.9.6</p>
-                    <p class="fragment">Coffeescript compiler got stricter in 1.6.2</p>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>Sourcemaps</h2>
-                    <ul>
-                        <li class="fragment">SASS</li>
-                        <li class="fragment">Javascript</li>
-                        <li class="fragment">Coffeescript</li>
-                    </ul>
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-				<section>
-					<h2>Backbone</h2>
-                    <img class="logo" src="img/backbone_logo.png"/>
-                </section>
-
-                <section>
-                    <p>Prior experience</p>
-                    <p class="fragment">Ideal for client-side single-page application</p>
-                    <p class="fragment">Simple MVC</p>
-					<aside class="notes">
-                        <p>Not as new as EmberJS and AngularJS, but 1 thing familiar amongst all the other new tech</p>
-                    </aside>
-				</section>
 
                 <section>
                     <h2>RequireJS</h2>
@@ -289,25 +257,56 @@ define('Creating an account model with data from the API', function() {
                     <pre><code>
 <script data-main="main" src="require.js"></script>      
                     </code></pre>
-                    <p>main.js</p>
+                    <p>main.coffee</p>
                     <pre><code>
-  require.config({ paths: { ... } });
+  require.config
+    paths:  #... 
 
-  require(['views/AccountDetailsView'], function(AccountDetailsView) {
-      var app = new AccountDetailsView();
-  });
+  require ['views/AccountDetailsView'], (AccountDetailsView) ->
+      app = new AccountDetailsView()
                     </code></pre>
-                    <p>AccountDetailsView.js</p>
+                    <p>AccountDetailsView.coffee</p>
                     <pre><code>
-  define(['models/AccountModel'], function(AccountModel) {
-    var AccountDetailsView = function() {
-        this.account = new AccountModel();
-    }
-
-    return AccountDetailsView;
-  });
+  define ['models/AccountModel'], (AccountModel) ->
+    class AccountDetailsView
+        constructor:
+            @account = new AccountModel()
                     </code></pre>
 				</section>
+
+				<section>
+					<h2>Backbone</h2>
+                    <img class="logo" src="img/backbone_logo.png"/>
+                </section>
+
+                <section>
+                    <h2>Simple MVC</h2>
+                    <p class="fragment">Ideal for client-side single-page application</p>
+                    <p class="fragment">Prior experience</p>
+                    <p class="fragment">Demo time</p>
+					<aside class="notes">
+                        <p>Not as new as EmberJS and AngularJS, but 1 thing familiar amongst all the other new tech</p>
+                    </aside>
+				</section>
+
+                <section>
+                    <h2>Living on the bleeding edge</h2>
+                    <p class="fragment">Manually upgrading Yeoman to 1.0.0 beta from 0.9.6</p>
+                    <p class="fragment">Coffeescript compiler got stricter in 1.6.2</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Sourcemaps</h2>
+                    <ul>
+                        <li class="fragment">Minified Javascript</li>
+                        <li class="fragment">Coffeescript</li>
+                        <li class="fragment">SASS</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+                </section>
 
 				<section>
                     <h2>Handlebars</h2>
