@@ -4,7 +4,7 @@ yeoman
 yo                  // install generator-backbone
 yo backbone         // generate your backbone project
 
-grunt
+grunt (tag 1)
 ======
 
 grunt server
@@ -51,3 +51,81 @@ Backbone
 ========
 
 tale-demo.git
+
+tag 2
+-----
+run grunt server:test
+show app.html + tests in 2 browser tabs
+show Gruntfile.js
+
+tag 3
+-----
+instrument model test plan
+run grunt server:test again
+show spec/instruments.coffee
+show spec/tests.coffee
+
+tag 4
+-----
+instrument model test implemented
+show spec/instruments.coffee
+show web inspector to show the error
+
+tag 5
+-----
+instrument model class added
+show models/InstrumentModel.coffee
+show test output
+
+tag 6
+-----
+implement InstrumentModel.id
+show models/InstrumentModel.coffee
+show test output
+
+tag 7
+-----
+instrument collection test implemented
+show spec/instruments.coffee
+show web inspector to show the error
+
+tag 8
+-----
+instrument collection class added implemented
+show collection/InstrumentCollection.coffee
+show web inspector to show the error
+
+tag 9
+-----
+instrument collecion of instrument model, not backbone.model
+show collection/InstrumentCollection.coffee
+show test output
+
+tag 10
+------
+implement failing API tests
+explain Promises
+show spec/api.coffee
+
+tag 11
+------
+implement failing API tests
+show scripts/API.coffee
+
+tag 12
+------
+implement view tests
+show spec/view.coffee
+show web inspector for errors
+
+tag 13
+------
+implement view classes
+show views/Instrument....coffee
+show test ouput
+show Router.coffee + main.coffee
+show app running
+
+tag 14
+------
+add clas
