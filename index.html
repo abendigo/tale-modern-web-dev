@@ -165,7 +165,7 @@
 
                 <section>
                     <h2>Package management for the web</h2>
-                    <p class="fragment">Like 'apt-get install' for client-side Javascript libraries</p>
+                    <p class="fragment">Like 'npm install' for client-side Javascript libraries</p>
                 </section>
 
                 <section>
@@ -231,7 +231,7 @@
 
                 <section>
                     <h2>Arrange, Act, Assert, Restore</h2>
-                    <pre class="fragment"><code>describe 'Creating an account model with data from the API', ->
+                    <pre><code>describe 'Creating an account model with data from the API', ->
     account = 0
 
     before ->
@@ -242,7 +242,7 @@
         account = new Backbone.Model data
 
     # Assert
-    it 'Translates the accountName property', ->
+    it 'should rename the accountName property', ->
         account.get('name').should.equal 'Primary'
 
     # Restore
